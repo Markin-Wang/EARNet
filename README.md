@@ -1,3 +1,88 @@
+# EAR-NET: Error Attention Refining Network ForRetinal Vessel Segmentation
+
+PyTorch implementation of 
+
+[EAR-NET: Error Attention Refining Network ForRetinal Vessel Segmentation](https://arxiv.org/pdf/2107.01351.pdf)" ( DICTA 2021 ) 
+
+If you use the code in this repo for your work, please cite the following bib entries:
+
+    @article{wang2021ear,
+        title={EAR-NET: Error Attention Refining Network For Retinal Vessel Segmentation},
+        author={Wang, Jun and Yang, Zhao and Qian, Linglong and Yu, Xiaohan and Gao, Yongsheng},
+        journal={arXiv preprint arXiv:2107.01351},
+        eprint={2107.01351},
+        archivePrefix={arXiv},
+        primaryClass={cs.CV}
+    }
+
+
+## Abstract
+
+The precise detection of blood vessels in retinal images is crucial to the early diagnosis of the retinal vascular diseases, e.g., diabetic, hypertensive and solar retinopathies. Existing works often fail in predicting the abnormal areas, e.g, sudden brighter and darker areas and are inclined to predict a pixel to background due to the significant class imbalance, leading to high accuracy and specificity while low sensitivity. To that end, we propose a novel error attention refining network (ERA-Net) that is capable of learning and predicting the potential false predictions in a two-stage manner for effective retinal vessel segmentation. The proposed ERA-Net in the refine stage drives the model to focus on and refine the segmentation errors produced in the initial training stage. To achieve this, unlike most previous attention approaches that run in an unsupervised manner, we introduce a novel error attention mechanism which considers the differences between the ground truth and the initial segmentation masks as the ground truth to supervise the attention map learning. Experimental results demonstrate that our method achieves state-of-the-art performance on two common retinal blood vessel datasets.
+
+<img src='architecture.png' width='1280' height='350'>
+
+
+## Prerequisites
+
+The following packages are required to run the scripts:
+- [Python >= 3.6]
+- [PyTorch >= 1.0]
+- [Torchvision]
+
+## Dataset
+The dataset can be downloaded from [Google Drive](https://drive.google.com/drive/folders/1EF_iamMlnb0QYS2xiQRq--fxm7an4tv7?usp=sharing).
+
+soybean_1_1: The soycultivarvein dataset with the training set:test set=1:1. For comparison to the state-of-the-art hand-crafted methods.
+
+soybean_2_1: The soycultivarvein dataset with the training set:test set=2:1.
+
+
+## Training scripts for MGANet with the backbone network Densenet161.
+Train the model on the Soybean dataset. We run our experiments on 4x2080Ti/4x1080Ti with the batchsize of 32.
+
+    $ python train.py --dataset soybean_2_1 --lr 0.05 --backbone_class densenet161
+
+
+## Testing scripts for MGANet with the backbone network Densenet161.
+Test the model on the Soybean dataset:
+
+    $ python test.py  --dataset soybean_2_1 --backbone_class densenet161
+    
+        
+            
+## Download  Models
+
+
+[Trained model Google Drive](https://drive.google.com/drive/folders/11SA7PGR9NbyJEaXFOHwA_PGiORdIEoYZ?usp=sharing)
+
+## Segmentation Experiments.
+For the leaf vein segmentation experiments, please refer to [Nvidia/semantic-segmentation](https://github.com/NVIDIA/semantic-segmentation) to gain the details.
+
+All the three datasets are trained with the crop size (448,448) and 60 epochs.
+
+
+
+## Acknowledgment
+Thanks for the advice and guidance given by Dr.Xiaohan Yu and Prof. Yongsheng Gao.
+
+Our project references the codes in the following repos.
+- [pytorch-cifar](https://github.com/kuangliu/pytorch-cifar)
+- [Nvidia/semantic-segmentation](https://github.com/NVIDIA/semantic-segmentation)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ### [Paper](https://arxiv.org/abs/2005.10821) | [YouTube](https://youtu.be/odAGA7pFBGA)  | [Cityscapes Score](https://www.cityscapes-dataset.com/method-details/?submissionID=7836) <br>
 
 Pytorch implementation of our paper [Hierarchical Multi-Scale Attention for Semantic Segmentation](https://arxiv.org/abs/2005.10821).<br>
