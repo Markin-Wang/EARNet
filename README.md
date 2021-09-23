@@ -34,7 +34,7 @@ For more required packages and instruction, please follow the instruction of [Nv
 ## Dataset
 Please refer to the [SA-UNet](https://github.com/clguo/SA-UNet) to prepare and enrich the datasets.
 
-The dataset also can be downloaded from [Google Drive](https://drive.google.com/drive/folders/1EF_iamMlnb0QYS2xiQRq--fxm7an4tv7?usp=sharing).
+The datasets also can be downloaded from [Google Drive](https://drive.google.com/drive/folders/1fY8M7Z0eL2vnvFhWK6xjpxi9Si7zudu7?usp=sharing).
 
 Error maps from first-phase model also can be downloaded from above link. 
 
@@ -57,7 +57,7 @@ Test the model on the Soybean dataset:
 ## Download  Models
 
 
-[Trained model Google Drive](https://drive.google.com/drive/folders/11SA7PGR9NbyJEaXFOHwA_PGiORdIEoYZ?usp=sharing)
+[Trained model Google Drive](https://drive.google.com/drive/folders/15c5G_7HpTNIjwxAVfyESdtO-tpnr4LcC?usp=sharing)
 
 
 
