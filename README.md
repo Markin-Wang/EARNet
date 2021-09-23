@@ -33,8 +33,11 @@ For more required packages and instruction, please follow the instruction of [Nv
 
 ## Dataset
 Please refer to the [SA-UNet](https://github.com/clguo/SA-UNet) to prepare and enrich the datasets.
+
 The dataset also can be downloaded from [Google Drive](https://drive.google.com/drive/folders/1EF_iamMlnb0QYS2xiQRq--fxm7an4tv7?usp=sharing).
+
 Error maps from first-phase model also can be downloaded from above link. 
+
 Alternatively, you can train the first-phase model from scratch and then generate the error maps by yourselves.
 
 
