@@ -1,0 +1,22 @@
+# Run Evaluation and Dump Images on Cityscapes with a pretrained model
+
+CMD: "python -m torch.distributed.launch --nproc_per_node=1 train.py --dump_for_submission"
+
+HPARAMS: [
+  {
+   dataset: stare,
+   cv: 0,
+   syncbn: true,
+   apex: true,
+   fp16: true,
+   bs_val: 1,
+   eval: folder,
+   eval_folder: './imgs/test_imgs',
+   dump_assets: true,
+   dump_all_images: true,
+   n_scales: "0.5,1.0,2.0",
+   snapshot: "/home/ubuntu/junwang/paper/ICIP/Leaf_Segmentation/semantic-segmentation/logs/train_stare/val_1_5/best_checkpoint_ep36.pth",
+   arch: ocrnet_error_attn.HRNet_Mscale,
+   result_dir: LOGDIR,
+  },
+]

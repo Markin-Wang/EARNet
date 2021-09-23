@@ -1,0 +1,20 @@
+# Run Evaluation on Leafvein with a pretrained model
+
+CMD: "python -m torch.distributed.launch --nproc_per_node=4 train.py"
+
+HPARAMS: [
+  {
+   dataset: drive,
+   cv: 0,
+   syncbn: true,
+   apex: true,
+   fp16: true,
+   bs_val: 1,
+   eval: val,
+   n_scales: "0.5,1.0,2.0",
+   snapshot: "/home/ubuntu/junwang/paper/ICIP/Leaf_Segmentation/semantic-segmentation/logs/train_drive/deepv3.DeepV3PlusW38_jade-sheep_2021.02.09_14.40/best_checkpoint_ep89.pth",
+   arch: deepv3.DeepV3PlusW38,
+   result_dir: LOGDIR,
+
+  },
+]

@@ -1,0 +1,36 @@
+# Train cityscapes using Mapillary-pretrained weights
+# Requires 32GB GPU
+# Adjust nproc_per_node according to how many GPUs you have
+
+CMD: "python -m torch.distributed.launch --nproc_per_node=4 train.py "
+
+HPARAMS: [
+  {
+   dataset: drive,
+   cv: 0,
+   syncbn: true,
+   apex: true,
+   fp16: true,
+   crop_size: "448,448",
+   bs_trn: 1,
+   poly_exp: 2,
+   #lr: 5e-3,
+   rmi_loss: true,
+   max_epoch: 15,
+   val_freq: 1,
+   n_scales: "0.5,1.0,2.0",
+   supervised_mscale_loss_wt: 0.05,
+   #snapshot: "/home/ubuntu/junwang/paper/ICIP/Leaf_Segmentation/semantic-segmentation/logs/train_drive/80276_basic/best_checkpoint_ep75.pth",
+   #snapshot: "ASSETS_PATH/seg_weights/wider_resnet38.pth.tar",
+   #snapshot: "ASSETS_PATH/seg_weights/ocrnet.HRNet_industrious-chicken.pth",
+   snapshot: "/home/ubuntu/junwang/paper/ICIP/Leaf_Segmentation/semantic-segmentation/logs/train_drive/79776_nonvalid_basic/best_checkpoint_ep31.pth",
+   arch: ocrnet_error_attn.HRNet_Mscale,
+   result_dir: LOGDIR,
+   RUNX.TAG: '{arch}',
+   lr: 0.001,
+   weight_decay: 0.00004,
+   class_uniform_pct: 0,
+#   img_wt_loss: true,
+#   gblur: true,
+  },
+]

@@ -1,0 +1,29 @@
+# Train cityscapes using Mapillary-pretrained weights
+# Requires 32GB GPU
+# Adjust nproc_per_node according to how many GPUs you have
+
+CMD: "python -m torch.distributed.launch --nproc_per_node=4 train.py "
+
+HPARAMS: [
+  {
+   dataset: leafvein,
+   cv: 0,
+   syncbn: true,
+   apex: true,
+   fp16: true,
+   crop_size: "448,448",
+   bs_trn: 1,
+   poly_exp: 2,
+   lr: 5e-3,
+   rmi_loss: true,
+   max_epoch: 60,
+   val_freq: 1,
+   n_scales: "0.5,1.0,2.0",
+   supervised_mscale_loss_wt: 0.05,
+   snapshot: "ASSETS_PATH/seg_weights/ocrnet.HRNet_industrious-chicken.pth",
+   arch: ocrnet.HRNet_Mscale,
+   result_dir: LOGDIR,
+   RUNX.TAG: '{arch}',
+   class_uniform_pct: 0,
+  },
+]

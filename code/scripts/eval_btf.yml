@@ -1,0 +1,19 @@
+# Run Evaluation on Leafvein with a pretrained model
+
+CMD: "python -m torch.distributed.launch --nproc_per_node=4 train.py"
+
+HPARAMS: [
+  {
+   dataset: btf,
+   cv: 0,
+   syncbn: true,
+   apex: true,
+   fp16: true,
+   bs_val: 1,
+   eval: val,
+   n_scales: "0.5,1.0,2.0",
+   snapshot: "/home/ubuntu/junwang/paper/ICIP/Leaf_Segmentation/semantic-segmentation/logs/train_btf/ocrnet.HRNet_Mscale_quick-woodpecker_2021.01.26_10.12/best_checkpoint_ep55.pth",
+   arch: ocrnet.HRNet_Mscale,
+   result_dir: LOGDIR,
+  },
+]

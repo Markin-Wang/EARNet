@@ -1,0 +1,34 @@
+# Train cityscapes using Mapillary-pretrained weights
+# Requires 32GB GPU
+# Adjust nproc_per_node according to how many GPUs you have
+
+CMD: "python -m torch.distributed.launch --nproc_per_node=4 train.py "
+
+HPARAMS: [
+  {
+   dataset: stare,
+   cv: 0,
+   syncbn: true,
+   apex: true,
+   fp16: true,
+   crop_size: "336,336",
+   bs_trn: 1,
+   poly_exp: 2,
+   lr: 5e-3,
+   rmi_loss: true,
+   max_epoch: 100,
+   val_freq: 1,
+   n_scales: "0.5,1.0,2.0",
+   supervised_mscale_loss_wt: 0.05,
+   snapshot: "ASSETS_PATH/seg_weights/wrn38_mapillary_50.06_cordial_beetle.pth",
+   arch: deepv3.DeepV3PlusW38,
+   result_dir: LOGDIR,
+   RUNX.TAG: '{arch}',
+#   lr: 0.001,
+#   weight_decay: 0.005,
+   class_uniform_pct: 0,
+#   img_wt_loss: true,
+#   gblur: true,
+   color_aug: false,
+  },
+]
