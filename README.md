@@ -6,13 +6,14 @@ PyTorch implementation of
 
 If you use the code in this repo for your work, please cite the following bib entries:
 
-    @article{wang2021feature,
-      title={Feature Fusion Vision Transformer for Fine-Grained Visual Categorization},
-      author={Wang, Jun and Yu, Xiaohan and Gao, Yongsheng},
-      journal={arXiv e-prints},
-      pages={arXiv--2107},
-      year={2021}
-    }
+@inproceedings{wang2021ear,
+  title={EAR-NET: Error Attention Refining Network For Retinal Vessel Segmentation},
+  author={Wang, Jun and Zhao, Yang and Qian, Linglong and Yu, Xiaohan and Gao, Yongsheng},
+  booktitle={2021 Digital Image Computing: Techniques and Applications (DICTA)},
+  pages={1--7},
+  year={2021},
+  organization={IEEE}
+}
 
 
 ## Abstract
