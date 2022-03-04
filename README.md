@@ -15,17 +15,6 @@ If you use the code in this repo for your work, please cite the following bib en
         organization={IEEE}
     }
 
-
-    @article{wang2021ear,
-        title={EAR-NET: Error Attention Refining Network For Retinal Vessel Segmentation},
-        author={Wang, Jun and Yang, Zhao and Qian, Linglong and Yu, Xiaohan and Gao, Yongsheng},
-        journal={arXiv preprint arXiv:2107.01351},
-        eprint={2107.01351},
-        archivePrefix={arXiv},
-        primaryClass={cs.CV}
-    }
-
-
 ## Abstract
 
 The precise detection of blood vessels in retinal images is crucial to the early diagnosis of the retinal vascular diseases, e.g., diabetic, hypertensive and solar retinopathies. Existing works often fail in predicting the abnormal areas, e.g, sudden brighter and darker areas and are inclined to predict a pixel to background due to the significant class imbalance, leading to high accuracy and specificity while low sensitivity. To that end, we propose a novel error attention refining network (ERA-Net) that is capable of learning and predicting the potential false predictions in a two-stage manner for effective retinal vessel segmentation. The proposed ERA-Net in the refine stage drives the model to focus on and refine the segmentation errors produced in the initial training stage. To achieve this, unlike most previous attention approaches that run in an unsupervised manner, we introduce a novel error attention mechanism which considers the differences between the ground truth and the initial segmentation masks as the ground truth to supervise the attention map learning. Experimental results demonstrate that our method achieves state-of-the-art performance on two common retinal blood vessel datasets.
